@@ -39,6 +39,8 @@ def unarchive_products(product_ids: List[int], client_id: str, api_key: str):
     return response.json()
 
 def main():
+    print("Started")
+
     # Load configuration
     config = configparser.ConfigParser()
     config.read('config.ini')
@@ -64,6 +66,8 @@ def main():
             # Unarchive products
             unarchive_response = unarchive_products(product_ids, client_id, api_key)
             print(f"Result: {unarchive_response} for Ids: {product_ids}")
+        else:
+            print("Working...")
 
 if __name__ == "__main__":
     main()
